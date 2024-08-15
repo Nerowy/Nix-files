@@ -1,9 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
-  inputs,
-  lib,
-  config,
   pkgs,
   ...
 }: {
@@ -30,12 +27,7 @@
       # })
     ];
     # Configure your nixpkgs instance
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-    };
+    config.allowUnfree = true;
   };
 
   # TODO: Set your username
@@ -51,11 +43,32 @@
     mpv
     vesktop
     brave
+    nil
+    piper
   ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    extensions = with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide
+      catppuccin.catppuccin-vsc
+      catppuccin.catppuccin-vsc-icons
+      editorconfig.editorconfig
+    ];
+    userSettings = {
+      "workbench.colorTheme" = "Catppuccin Mocha";
+      "editor.tabSize" = 2;
+
+      # https://github.com/nix-community/vscode-nix-ide
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nil"; # pkgs.nil
+    };
+  };
+
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
