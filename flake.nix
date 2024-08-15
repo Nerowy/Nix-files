@@ -28,7 +28,5 @@
         modules = [./nixos/configuration.nix];
       };
     };
-
-
   };
 }

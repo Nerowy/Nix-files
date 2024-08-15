@@ -13,7 +13,7 @@
     # If you want to use modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
-inputs.home-manager.nixosModules.home-manager
+    inputs.home-manager.nixosModules.home-manager
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -77,15 +77,17 @@ inputs.home-manager.nixosModules.home-manager
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-        `"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIoe3VveHt2vXoHdkRbLE0Xx5il0T3v8PiWxFvdniSLg different@sodium"`
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIoe3VveHt2vXoHdkRbLE0Xx5il0T3v8PiWxFvdniSLg different@sodium"
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel"
-"audio"
-"video"
-"input"
-"networkmanager"
-"libvirtd"];
+      extraGroups = [
+        "wheel"
+        "audio"
+        "video"
+        "input"
+        "networkmanager"
+        "libvirtd"
+      ];
     };
   };
 
@@ -102,10 +104,9 @@ inputs.home-manager.nixosModules.home-manager
     };
   };
 
+  services.tailscale.enable = true;
 
-services.tailscale.enable = true;
-
- # Enable sound with pipewire.
+  # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -164,20 +165,15 @@ services.tailscale.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
-   
-      # FIXME replace with your username@hostname
-      home-manager = {
-      
-        extraSpecialArgs = {inherit inputs outputs;};
-        # > Our main home-manager configuration file <
-        users.newo = import ../home-manager/home.nix;
-      };
-    
+  # Standalone home-manager configuration entrypoint
+  # Available through 'home-manager --flake .#your-username@your-hostname'
 
-
-
+  # FIXME replace with your username@hostname
+  home-manager = {
+    extraSpecialArgs = {inherit inputs outputs;};
+    # > Our main home-manager configuration file <
+    users.newo = import ../home-manager/home.nix;
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
