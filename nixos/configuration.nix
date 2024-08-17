@@ -14,9 +14,14 @@
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
     inputs.home-manager.nixosModules.home-manager
-
+    inputs.catppuccin.nixosModules.catppuccin
+    inputs.nixos-hardware.nixosModules.common-cpu-amd
+    inputs.nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
+    inputs.nixos-hardware.nixosModules.common-pc-ssd
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
+    ./nvidia.nix
+    ./xdg.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -114,12 +119,8 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    jack.enable = true;
+    wireplumber.enable = true;
   };
 
   # Enable networking
@@ -145,11 +146,11 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.desktopManager.plasma6.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Configure keymap in X11
@@ -194,9 +195,30 @@
 
   programs.nh = {
     enable = true;
-    flake = /home/newo/nix-files;
+    flake = "/home/newo/nix-files";
   };
 
   hardware.ckb-next.enable = true;
   services.ratbagd.enable = true;
+  catppuccin.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  };
+
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+    ];
+  };
+
+  # mount, trash, and other functionalities
+  services.gvfs.enable = true;
+
+  # thumbnail support for images
+  services.tumbler.enable = true;
+
+  # archive support
+  programs.file-roller.enable = true;
 }
