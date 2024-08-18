@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./ratbagd.nix
+  ];
+}

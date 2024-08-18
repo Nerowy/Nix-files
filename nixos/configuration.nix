@@ -4,7 +4,6 @@
   inputs,
   lib,
   config,
-  pkgs,
   outputs,
   ...
 }: {
@@ -14,7 +13,6 @@
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
     inputs.home-manager.nixosModules.home-manager
-    inputs.catppuccin.nixosModules.catppuccin
     inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
     inputs.nixos-hardware.nixosModules.common-pc-ssd
@@ -22,6 +20,9 @@
     # ./users.nix
     ./nvidia.nix
     ./xdg.nix
+    ./security.nix
+    ./programs
+    ./services
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -144,24 +145,6 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  # services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = true;
-  # services.desktopManager.plasma6.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "gb";
-    xkbVariant = "";
-  };
-
-  # Configure console keymap
-  console.keyMap = "uk";
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -178,47 +161,12 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
-  programs.steam = {
-    enable = true;
-    extraCompatPackages = with pkgs; [
-      proton-ge-bin
-      (proton-ge-bin.overrideAttrs (finalAttrs: {
-        pname = "proton-ge-rtsp-bin";
-        version = "GE-Proton9-10-rtsp13";
-        src = pkgs.fetchzip {
-          url = "https://github.com/SpookySkeletons/proton-ge-rtsp/releases/download/GE-Proton9-10-rtsp13/GE-Proton9-10-rtsp13.tar.gz";
-          hash = "sha256-jf1p33Kuqtriycf6gOw/IBdx/ts/P7PJd+pjxonAS/U=";
-        };
-      }))
-    ];
-  };
+  
 
-  programs.nh = {
-    enable = true;
-    flake = "/home/newo/nix-files";
-  };
+  
 
   hardware.ckb-next.enable = true;
-  services.ratbagd.enable = true;
-  catppuccin.enable = true;
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-  };
+  
+  
 
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-    ];
-  };
-
-  # mount, trash, and other functionalities
-  services.gvfs.enable = true;
-
-  # thumbnail support for images
-  services.tumbler.enable = true;
-
-  # archive support
-  programs.file-roller.enable = true;
 }

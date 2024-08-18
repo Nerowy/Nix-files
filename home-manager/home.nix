@@ -93,6 +93,8 @@
       # s -> separate, will arbitrarily combine keys between each mod/key, see [Keysym combos](#keysym-combos) above.
       # d -> has description, will allow you to write a description for your bind.
 
+      "$mod" = "SUPER";
+
       bindm = [
         # use wev to find mouse button codes
         "$mod, mouse:272, movewindow"
@@ -142,6 +144,10 @@
         ## current screen
         "CTRL, Print, exec, ${runOnce "grimblast"} --notify --cursor copy output"
         "$mod SHIFT CTRL, S, exec, ${runOnce "grimblast"} --notify --cursor copy output"
+      ];
+      monitor = [
+        "desc:Microstep MSI G273Q CA8A461200959, 2560x1440@164.84, 0x0, 1"
+        "desc:BNQ BenQ EL2870U R5M00857SL0, 2560x1440@59.95, auto-right, 1"
       ];
     };
   };
