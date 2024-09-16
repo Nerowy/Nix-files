@@ -16,6 +16,7 @@
     inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
     inputs.nixos-hardware.nixosModules.common-pc-ssd
+    inputs.disko.nixosModules.default
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
     ./nvidia.nix
@@ -23,9 +24,12 @@
     ./security.nix
     ./programs
     ./services
+    ./persistence.nix
+    ./core/zfs.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./disk-configuration.nix
   ];
 
   nixpkgs = {
@@ -70,7 +74,10 @@
   # FIXME: Add the rest of your current configuration
 
   # TODO: Set your hostname
-  networking.hostName = "newo";
+  networking = {
+    hostName = "newo";
+    hostId = "4360ed1b";
+  };
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -146,8 +153,14 @@
   };
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    supportedFilesystems = [ "zfs" "ntfs" ];
+  };
 
   # Standalone home-manager configuration entrypoint
   # Available through 'home-manager --flake .#your-username@your-hostname'
