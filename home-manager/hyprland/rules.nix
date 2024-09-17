@@ -1,4 +1,3 @@
 {
-  wayland.windowManager.hyprland.settings.windowrulev2 = [
-  ];
+  wayland.windowManager.hyprland.settings.windowrulev2 = [];
 }

@@ -2,6 +2,7 @@
   imports = [
     inputs.disko.nixosModules.default
   ];
+  
   # Bootloader.
   boot = {
     initrd = {

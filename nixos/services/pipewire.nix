@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   # Enable sound with pipewire.
   services.pipewire = {
     enable = true;
@@ -8,5 +8,6 @@
     jack.enable = true;
     wireplumber.enable = true;
   };
-  hardware.pulseaudio.enable = false;
+
+  hardware.pulseaudio.enable = lib.mkForce false;
 }
