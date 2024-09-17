@@ -22,6 +22,11 @@
     ./disk-configuration.nix
   ];
 
+  networking = {
+    hostName = "newo";
+    hostId = "4360ed1b";
+  };
+
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs;};
     users.newo = import ../home-manager/home.nix;

@@ -1,8 +1,9 @@
 {
   networking = {
-    # Enable networking
     networkmanager.enable = true;
-    hostName = "newo";
-    hostId = "4360ed1b";
   };
+
+  environment.persistence."/persist/system".directories = [
+    "/etc/NetworkManager/system-connections"
+  ];
 }

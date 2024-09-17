@@ -39,7 +39,6 @@
     mpv
     vesktop
     brave
-    nil
     piper
     pavucontrol
   ];

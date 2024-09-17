@@ -10,4 +10,8 @@
   };
 
   hardware.pulseaudio.enable = lib.mkForce false;
+
+  environment.persistence."/persist/system".directories = [
+    "/etc/pipewire"
+  ];
 }
