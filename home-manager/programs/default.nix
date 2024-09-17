@@ -1,5 +1,5 @@
 {
-  imports =[
+  imports = [
     ./vscodium.nix
     ./catppuccin.nix
     ./kitty.nix

@@ -20,7 +20,7 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-     hyprpaper = {
+    hyprpaper = {
       url = "github:hyprwm/hyprpaper";
       inputs = {
         hyprlang.follows = "hyprland/hyprlang";
@@ -31,8 +31,6 @@
       };
     };
   };
-
-  
 
   outputs = {
     self,

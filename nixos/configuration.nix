@@ -14,7 +14,7 @@
     inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
     inputs.nixos-hardware.nixosModules.common-pc-ssd
-    
+
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
     ./hardware
@@ -40,12 +40,4 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
-  
-
-  
-
-  
-  
-  
-
 }

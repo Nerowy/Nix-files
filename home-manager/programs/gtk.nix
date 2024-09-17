@@ -11,6 +11,5 @@
       tweaks = ["normal"];
       icon.enable = true;
     };
-  
   };
 }
