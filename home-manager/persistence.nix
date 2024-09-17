@@ -21,6 +21,7 @@
       ".local/share/Trash"
       ".terminfo"
 
+      ".local/state/wireplumber"
       ".local/share/keyrings"
       ".local/share/direnv"
       ".config/vesktop"

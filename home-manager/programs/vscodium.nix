@@ -1,4 +1,8 @@
-{pkgs, config, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -9,7 +13,7 @@
       catppuccin.catppuccin-vsc-icons
       editorconfig.editorconfig
     ];
-    
+
     userSettings = {
       "workbench.colorTheme" = "Catppuccin Mocha";
       "editor.tabSize" = 2;
