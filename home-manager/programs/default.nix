@@ -7,5 +7,6 @@
     ./xdg.nix
     ./gtk.nix
     ./git.nix
+    ./btop.nix
   ];
 }
