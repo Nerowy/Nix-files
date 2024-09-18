@@ -10,5 +10,6 @@
     ./git.nix
     ./btop.nix
     ./fish.nix
+    ./waybar.nix
   ];
 }
