@@ -5,5 +5,6 @@
     ./steam.nix
     ./thunar.nix
     ./xdg.nix
+    ./mosh.nix
   ];
 }
