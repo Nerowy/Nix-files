@@ -17,6 +17,7 @@
     userSettings = {
       "workbench.colorTheme" = "Catppuccin Mocha";
       "editor.tabSize" = 2;
+      "window.titleBarsStyle" = "custom";
 
       # https://github.com/nix-community/vscode-nix-ide
       "nix.enableLanguageServer" = true;
