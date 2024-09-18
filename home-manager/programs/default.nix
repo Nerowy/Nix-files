@@ -1,5 +1,6 @@
 {
   imports = [
+    ./fastfetch
     ./vscodium.nix
     ./catppuccin.nix
     ./kitty.nix
@@ -8,5 +9,6 @@
     ./gtk.nix
     ./git.nix
     ./btop.nix
+    ./fish.nix
   ];
 }

@@ -6,5 +6,6 @@
     ./thunar.nix
     ./xdg.nix
     ./mosh.nix
+    ./fish.nix
   ];
 }
