@@ -3,5 +3,12 @@
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
-  catppuccin.enable = true;
+  catppuccin = {
+    enable = true;
+    accent = "blue";
+    flavor = "mocha";
+    pointerCursor.enable = true;
+    pointerCursor.accent = "blue";
+    pointerCursor.flavor = "mocha";
+  };
 }
