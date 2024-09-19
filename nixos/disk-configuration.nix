@@ -126,7 +126,7 @@ in {
     };
     zpool."xpool" =
       {
-        rootFsOptions.keylocation = "prompt";
+        rootFsOptions.keylocation = "file:///etc/zfs/keys/xpool.key";
         datasets."media" = mkDataset "xpool" "media" "/home/newo/media";
       }
       // poolConfig;
