@@ -18,5 +18,7 @@
 
   home.packages = [
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    inputs.hyprpicker.packages.${pkgs.system}.default
   ];
+  
 }

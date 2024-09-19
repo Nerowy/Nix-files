@@ -52,6 +52,14 @@
         systems.follows = "hyprland/systems";
       };
     };
+     hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+      inputs = {
+        hyprutils.follows = "hyprland/hyprutils";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
+      };
+    };
 
     # manage persistent state
     impermanence.url = "github:nix-community/impermanence";
