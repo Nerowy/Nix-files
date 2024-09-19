@@ -2,6 +2,16 @@
   description = "nixos adventure";
 
   inputs = {
+    # secrets management
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
+    };
+
     # color theme
     catppuccin.url = "github:catppuccin/nix";
 

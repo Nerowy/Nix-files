@@ -1,5 +1,6 @@
 {
   imports = [
+    ./agenix.nix
     ./catppuccin.nix
     ./hyprland.nix
     ./steam.nix
