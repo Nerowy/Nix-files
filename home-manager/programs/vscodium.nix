@@ -18,6 +18,11 @@
       "workbench.colorTheme" = "Catppuccin Mocha";
       "editor.tabSize" = 2;
       "window.titleBarsStyle" = "custom";
+      "editor.formatOnSave" = true;
+      "nix.serverSettings.nil.formatting.command" = ["${pkgs.alejandra}/bin/alejandra" "-" "--quiet"];
+
+
+ 
 
       # https://github.com/nix-community/vscode-nix-ide
       "nix.enableLanguageServer" = true;
@@ -25,8 +30,10 @@
     };
   };
 
-  # nix language server
-  home.packages = [pkgs.nil];
+  home.packages = with pkgs; [
+  alejandra # formatter
+  nil # nix language server
+  ];
 
   home.persistence."/persist${config.home.homeDirectory}".directories = [
     ".config/VSCodium/CachedData"
