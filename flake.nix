@@ -15,6 +15,10 @@
     # color theme
     catppuccin.url = "github:catppuccin/nix";
 
+    # using the ephemeral-tools module from different's nix-files
+    # causes lockfile explosion, alternative is to use flake = false
+    different-nix-files.url = "github:different-name/nix-files";
+
     # declarative partitioning and formatting
     disko = {
       url = "github:nix-community/disko";
