@@ -1,19 +1,15 @@
-# Nixos adventure of a Silly lil Polish Mao
+# Nix-files
 
-I was interested in Linux back in 2019, but was scared of it, mostly cuz of my school and teachers that made programming difficult to understand.
+## Motivation
 
-Years later, I've met a wonderful person that changed my perspective on life and I learned a lot about myself and was open to changes without fear of failing.
+I was interested in Linux back in 2019, but have been afraid to learn more about it, mostly because of my school experiences that had made programming difficult to understand.
 
-This year i was watching my Beloved Best Friend starting his Nixos adventure, he was comming to me with every little thing he discovered or did and seeing and hearing  him being so passionate about it, slowly started to create the idea of starting on my own.
+[different-name](https://github.com/different-name) has taken the role of a teacher and has changed my perspective on learning. I have greatly enjoyed seeing his level of passion for his work, and it pushed me to take the plunge.
 
-I was watching him streaming for me hes work on his confing, i saw all the struggles he was going through, and despite that, i still was getting more and more interested on switching to Nixos.
+### Why NixOS?
 
-Eventually, My Beloved Best Friend offered his Platinum Support Service if i would decide to switch to Nixos and... i said YES !
+I'm found great interest in how NixOS functions and what can be achieved compared to other distributions. I want to learn more about NixOS
 
-# Why Nixos ? 
+## Acknowledgements
 
-Simple, i liked how it works and looks and that was Dystro i was used to from all the hours i've spent on watching my Beloved Best Friend.
-
-He's Really Smart, and with he's lvl of dedication and passion there is nothing that stands in his way, i enjoy watching him grow <3
-
-I Highly recommend checking his Git hub " https://github.com/different-name " i wouldn't be here if it wouldn't be for him.
+- (different-name/nix-files)[https://github.com/different-name/nix-files]
