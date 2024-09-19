@@ -5,6 +5,7 @@
     ./catppuccin.nix
     ./kitty.nix
     ./rofi.nix
+    ./steam.nix
     ./xdg.nix
     ./gtk.nix
     ./git.nix
