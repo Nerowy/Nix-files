@@ -12,4 +12,4 @@ I'm found great interest in how NixOS functions and what can be achieved compare
 
 ## Acknowledgements
 
-- (different-name/nix-files)[https://github.com/different-name/nix-files]
+- [different-name/nix-files](https://github.com/different-name/nix-files)
