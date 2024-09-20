@@ -35,7 +35,6 @@
   };
 
   home.packages = with pkgs; [
-    kdePackages.kate
     mpv
     vesktop
     brave
