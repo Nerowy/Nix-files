@@ -56,7 +56,7 @@
         systems.follows = "hyprland/systems";
       };
     };
-     hyprpicker = {
+    hyprpicker = {
       url = "github:hyprwm/hyprpicker";
       inputs = {
         hyprutils.follows = "hyprland/hyprutils";

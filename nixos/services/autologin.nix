@@ -1,5 +1,4 @@
-
-  user: {
+user: {
   config,
   pkgs,
   lib,

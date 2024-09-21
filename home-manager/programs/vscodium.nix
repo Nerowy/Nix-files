@@ -21,9 +21,6 @@
       "editor.formatOnSave" = true;
       "nix.serverSettings.nil.formatting.command" = ["${pkgs.alejandra}/bin/alejandra" "-" "--quiet"];
 
-
- 
-
       # https://github.com/nix-community/vscode-nix-ide
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nil"; # pkgs.nil
@@ -31,8 +28,8 @@
   };
 
   home.packages = with pkgs; [
-  alejandra # formatter
-  nil # nix language server
+    alejandra # formatter
+    nil # nix language server
   ];
 
   home.persistence."/persist${config.home.homeDirectory}".directories = [
