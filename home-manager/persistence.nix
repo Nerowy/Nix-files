@@ -26,6 +26,19 @@
       ".local/share/direnv"
       ".config/vesktop"
       ".config/BraveSoftware/Brave-Browser"
+
+      # prism launcher
+      ".local/share/PrismLauncher"
+
+      # lutris
+      ".local/share/lutris"
+      ".local/share/umu" # proton runtime
+
+      # heroic
+      ".config/heroic"
+
+      # osu-lazer
+      ".local/share/osu"
     ];
 
     files = [
