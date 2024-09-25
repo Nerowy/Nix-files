@@ -8,6 +8,11 @@
       package = pkgs.zfs_unstable;
       devNodes = "/dev/"; # compatability for disks with no serial numbers
       forceImportAll = true; # force import zpools at boot
+
+      services.zfs = {
+        trim.enable = true;
+        autoScrub.enable = true;
+      };
     };
 
     # roll back the root and home datasets to empty! impermanence :o
