@@ -7,5 +7,6 @@
     ./users.nix
     ./locale.nix
     ./boot.nix
+    ./fwupd.nix
   ];
 }
