@@ -7,7 +7,7 @@
         pname = "proton-ge-rtsp-bin";
         version = "GE-Proton9-11-rtsp15";
         src = pkgs.fetchzip {
-          url = "https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/GE-Proton9-11-rtsp15";
+          url = "https://github.com/SpookySkeletons/proton-ge-rtsp/releases/download/GE-Proton9-11-rtsp15/GE-Proton9-11-rtsp15.tar.gz";
           hash = "sha256-jf1p33Kuqtriycf6gOw/IBdx/ts/P7PJd+pjxonAS/U=";
         };
       }))
