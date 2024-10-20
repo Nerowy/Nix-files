@@ -1,5 +1,6 @@
 {
   imports = [
+    ./goxlr.nix
     ./ratbagd.nix
     ./pipewire.nix
     ./openssh.nix
